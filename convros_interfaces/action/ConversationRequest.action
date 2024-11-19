@@ -1,0 +1,8 @@
+# Goal
+string command  # Either 'start' or 'stop'
+---
+# Result
+bool success
+---
+# Feedback
+float32 seconds_running  # For how long the converation running
