@@ -47,4 +47,4 @@ CATKIN_IGNORE
 *.pyc
 __pycache__/
 
-/config/*.json #Google API credential
+*.json
