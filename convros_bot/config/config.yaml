@@ -1,6 +1,6 @@
 tts_node:
   ros__parameters:
-    tts_model: "googleAPI" #Select from ["gTTS", "googleAPI"]
+    tts_model: "gTTS" #Select from ["gTTS", "googleAPI"]
     api_credential_file : "sttCred.json" # Inside config/ folder
 
 conversation_action:
