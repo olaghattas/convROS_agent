@@ -48,3 +48,4 @@ CATKIN_IGNORE
 __pycache__/
 
 *.json
+*.log
