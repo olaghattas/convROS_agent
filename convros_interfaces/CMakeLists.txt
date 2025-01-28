@@ -15,6 +15,7 @@ find_package(rosidl_default_generators REQUIRED)
 
 set(action_files
     action/ConversationRequest.action
+    action/QuestionResponseRequest.action
 )
 
 # Generate action interfaces
