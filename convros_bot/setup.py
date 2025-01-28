@@ -24,10 +24,15 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'speechRecognizer_main = convros_bot.speechRecognizer_main:main',
+            'tts_main = convros_bot.tts_main:main',
+
             'stt_node = convros_bot.stt_node:main',
             'tts_node = convros_bot.tts_node:main',
+            'speech_processor = convros_bot.speech_processor:main',
+
             'conversation_action = convros_bot.conversation_action:main',
-            'speech_processor = convros_bot.speech_processor:main',            
+            'question_response_action = convros_bot.question_response_action:main',
         ],
     },
 )

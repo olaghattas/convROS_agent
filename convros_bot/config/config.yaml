@@ -1,34 +1,36 @@
 tts_node:
   ros__parameters:
     tts_model: "gTTS" #Select from ["gTTS", "googleAPI"]
-    api_credential_file : "sttCred.json" # Inside config/ folder
+    api_credential_file : "ttsCred.json" # Inside config/ folder
+
+question_response_action:
+  ros__parameters:
+    tts_model: "gTTS" #Select from ["gTTS", "googleAPI"]
+    api_credential_file : "ttsCred.json" # Inside config/ folder
 
 conversation_action:
   ros__parameters:
     wake_words:
       - "stretch"
       - "sarah"
-      - "sara"
-      - "zara"
-      - "strict"
       - "scratch"
-      - "straight?"
+      - "tom"
       
     wake_responses:
       - "Hello! How can I assist you today?"
-      - "Mmmm-Hmmmm? How I can I help?"
-      - "Mmmm-Hmmmm? You called? How can I assist?"
+      - "How I can I help?"
+      - "You called? How can I assist?"
       - "You called me? What can I do for you?"
-      - "Mmmm-Hmmmm? Listening! What's up?"
+      - "Listening! What's up?"
       - "Hello there! How can I help today?"
-      - "Mmmm-Hmmmm? Right here! What do you need?"
+      - "Right here! What do you need?"
       - "Hi! I am Ready to assist. You can ask."
-      - "Mmmm-Hmmmm? Standing by. How can I be of service?"
-      - "Mmmm-Hmmmm?, I’m listening. Go ahead!"
-      - "Mmmm-Hmmmm? Here and ready to assist!"
+      - "Standing by. How can I be of service?"
+      - "Yes?, I’m listening. Go ahead!"
+      - "Here and ready to assist!"
       - "Hello! I'm here and ready to help."
-      - "Mmmm-Hmmmm? What do you need? I’m all ears!"
-      - "Mmmm-Hmmmm?, I’m ready. What do you need?"
+      - "What do you need? I’m all ears!"
+      - "Yes?, I’m ready. What do you need?"
 
     trigger_keywords:
       - "weather"
@@ -77,6 +79,6 @@ speech_processor:
       
     wake_responses:
       - "I'm listening! Please wait while I guide myself towards you."
-      - "Mmmm-Hmmmm? I'm coming"
+      - "I'm coming"
       - "Mmm Hmm? Hang on! I'm coming."
       - "Am I being called? Wait there, I'm coming."

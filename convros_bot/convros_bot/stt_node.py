@@ -1,7 +1,10 @@
+'''
+This node listens and publish recognized speech to /speech_text topic
+'''
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
-from RealtimeSTT import AudioToTextRecorder
+from convros_bot.speechRecognizer_main import speechRecognizer
 import os
 
 class STTNode(Node):
@@ -9,7 +12,9 @@ class STTNode(Node):
         super().__init__('stt_node')
         self.msg = String()
         self.publisher_ = self.create_publisher(String, 'speech_text', 10)
-        self.recorder = AudioToTextRecorder(model = 'base.en', input_device_index=0, spinner=True, min_gap_between_recordings=1.0)
+        
+        # Setup speech recognizer
+        self.recognizer = speechRecognizer()
         self.timer = self.create_timer(0.05, self.listen_and_publish)
 
     def publish_text(self, text):
@@ -19,7 +24,7 @@ class STTNode(Node):
 
     def listen_and_publish(self):
         try:
-            self.recorder.text(self.publish_text)
+            self.recognizer.recorder.text(self.publish_text)
                 
         except Exception as e:
             self.get_logger().error(f'An Error occurred: {e}')
