@@ -30,12 +30,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 # Export runtime dependencies
 ament_export_dependencies(rosidl_default_runtime)
 
-# Install directories
-install(
-  DIRECTORY include/
-  DESTINATION include
-)
-
 install(
   DIRECTORY action/
   DESTINATION share/${PROJECT_NAME}/action
