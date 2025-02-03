@@ -21,7 +21,7 @@ from bs4 import BeautifulSoup
 from rclpy.action import ActionServer, GoalResponse, CancelResponse
 from convros_bot.speechRecognizer_main import speechRecognizer
 from convros_bot.tts_main import TTS
-
+import re
 from ament_index_python.packages import get_package_share_directory
 
 share_directory = get_package_share_directory('convros_bot')
@@ -96,12 +96,16 @@ class QuestionResponseActionServer(Node):
                     if len(self.speech_text_queue):
                         speech_text = self.speech_text_queue.pop(0)
                         # print(speech_text)
-                        if "yes" in speech_text:
+                        # if "yes" in speech_text:
+                        if bool(re.search(r'\byes\b', speech_text, re.IGNORECASE)):
                             self.response = "yes"
                             self.tts.speak("I got a yes")
                             self.isAwake = False
                             break
-                        elif "no" in speech_text:
+                        
+                        # elif "no" in speech_text:
+                        # Check if 'no' appears as a standalone word
+                        elif bool(re.search(r'\bno\b', speech_text, re.IGNORECASE)):
                             self.response = "no"
                             self.tts.speak("I got a no")
                             self.isAwake = False
