@@ -10,9 +10,10 @@ sudo apt-get install portaudio19-dev
 pip3 install pyaudio
 
 pip3 install RealtimeSTT
-
+pip install gTTS
 pip install google-auth
 pip install google-cloud-texttospeech
+pip install playsound
 
 ```
 
